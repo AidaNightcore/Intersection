@@ -1,66 +1,44 @@
-var red = document.getElementById("red").value;
-var yellow = document.getElementById("yellow").value;
-var green = document.getElementById("green").value;
-const p = 1000;
-red *= p;
-yellow *= p;
-green *= p;
-var sum = red + yellow + green + yellow;
+var pred = document.getElementById("red").value;
+var pyellow = document.getElementById("yellow").value;
+var pgreen = document.getElementById("green").value;
+const x = 1000;
+pred *= x;
+pyellow *= x;
+pgreen *= x;
+var psum = pred + pyellow + pgreen + pyellow;
 
-function startTrafficSignal() {
-  var vertical = [
-    "../imagini/green-traffic-car.png",
-    "../imagini/yellow-trafic-car.png",
-    "../imagini/red-traffic-car.png",
+function startPedestrianLights() {
+  var pvertical = [
+    "../imagini/green-pedestrian.png",
+    "../imagini/red-pedestrian.png",
   ];
-  var horizontal = [
-    "../imagini/red-traffic-car.png",
-    "../imagini/yellow-trafic-car.png",
-    "../imagini/green-traffic-car.png",
+
+  var phorizontal = [
+    "../imagini/red-pedestrian.png",
+    "../imagini/green-pedestrian.png",
   ];
-  let v_left = document.getElementById("light-vertical-left");
-  let v_right = document.getElementById("light-vertical-right");
-  let h_left = document.getElementById("light-horizontal-left");
-  let h_right = document.getElementById("light-horizontal-right");
+  var pv_left = document.getElementById("plight-vertical-left");
+  var pv_right = document.getElementById("plight-vertical-right");
+  var ph_left = document.getElementById("plight-horizontal-left");
+  var ph_right = document.getElementById("plight-horizontal-right");
 
-  // culoarea verde/rosie
+  // culoarea verde
   setTimeout(function () {
-    console.log(red);
-    v_left.src = vertical[0];
-    v_right.src = vertical[0];
-    h_left.src = horizontal[0];
-    h_right.src = horizontal[0];
-  }, red);
+    pv_left.src = pvertical[0];
+    pv_right.src = pvertical[0];
+    ph_left.src = phorizontal[0];
+    ph_right.src = phorizontal[0];
+  }, pyellow + pred);
 
-  // culoarea galbena
+  // culoarea rosie
   setTimeout(function () {
-    console.log(yellow);
-    v_left.src = vertical[1];
-    v_right.src = vertical[1];
-    h_left.src = horizontal[1];
-    h_right.src = horizontal[1];
-  }, yellow + red);
-
-  //culoare rosie/verde
-  setTimeout(function () {
-    console.log(green);
-    v_left.src = vertical[2];
-    v_right.src = vertical[2];
-    h_left.src = horizontal[2];
-    h_right.src = horizontal[2];
-  }, green + yellow + red);
-
-  // culoarea galbena
-  setTimeout(function () {
-    console.log(sum);
-    v_left.src = vertical[1];
-    v_right.src = vertical[1];
-    h_left.src = horizontal[1];
-    h_right.src = horizontal[1];
-  }, sum);
+    pv_left.src = pvertical[0];
+    pv_right.src = pvertical[0];
+    ph_left.src = phorizontal[0];
+    ph_right.src = phorizontal[0];
+  }, pgreen);
 }
-console.log(sum);
 var timer = setInterval(function () {
-  startTrafficSignal();
+  startPedestrianLights();
 }, sum);
-startTrafficSignal();
+startPedestrianLights();

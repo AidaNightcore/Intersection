@@ -38,10 +38,10 @@
 var red = document.getElementById("red").value;
 var yellow = document.getElementById("yellow").value;
 var green = document.getElementById("green").value;
-const x = 1000;
-red *= x;
-yellow *= x;
-green *= x;
+const y = 1000;
+red *= y;
+yellow *= y;
+green *= y;
 var sum = red + yellow + green + yellow;
 
 function startTrafficSignal() {

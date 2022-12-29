@@ -9,15 +9,11 @@ h1 {
 
 .grid {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto auto auto;
 }
 
-.traffic-cars {
+.grid img {
   width: 5%;
-  height: auto;
-}
-.traffic-pedestrians {
-  width: 30%;
   height: auto;
 }

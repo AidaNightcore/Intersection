@@ -40,5 +40,5 @@ function startPedestrianLights() {
 }
 var timer = setInterval(function () {
   startPedestrianLights();
-}, sum);
+}, psum);
 startPedestrianLights();

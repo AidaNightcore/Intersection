@@ -1,0 +1,23 @@
+body {
+  background: url() no-repeat center;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+}
+
+.traffic-cars {
+  width: 5%;
+  height: auto;
+}
+.traffic-pedestrians {
+  width: 30%;
+  height: auto;
+}

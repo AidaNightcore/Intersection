@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intersectie</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Intersectie cu masini si pietoni</h1>
+
+    <div>
+      <h2>Selecteaza timpul culorilor</h2>
+      <div class="text">
+        <p>Rosu</p>
+        <input type="number" name="Red" id="red" />
+        <p>Galben</p>
+        <input type="number" name="Yellow" id="yellow" />
+        <p>Verde</p>
+        <input type="number" name="Green" id="green" />
+      </div>
+    </div>
+    <!--Se foloseste grid pentru a seta intr-un rand si coloana imaginea semaforului-->
+    <div class="grid">
+      <div class="grid-item">
+        <img
+          src="../imagini/green-traffic-car.png"
+          alt="traffic light for cars with 3 colours"
+          class="traffic-cars"
+          id="light-vertical-left"
+        />
+      </div>
+      <div class="griditem">
+        <img
+          src="../imagini/green-traffic-car.png"
+          alt=""
+          class="traffic-cars"
+          id="light-horizontal-left"
+        />
+      </div>
+      <div class="griditem">
+        <img
+          src="../imagini/green-traffic-car.png"
+          alt=""
+          class="traffic-cars"
+          id="light-horizontal-right"
+        />
+      </div>
+      <div class="griditem">
+        <img
+          src="../imagini/green-traffic-car.png"
+          alt=""
+          class="traffic-cars"
+          id="light-vertical-right"
+        />
+        <img src="" alt="pieton" />
+      </div>
+    </div>
+
+    <script src="../script/traffic-pedestrian.js"></script>
+  </body>
+</html>

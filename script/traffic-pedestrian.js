@@ -25,25 +25,25 @@ function startTrafficSignal() {
 
   // culoarea verde/rosie
   setTimeout(function () {
-    console.log("1");
+    console.log(red);
     v_left.src = vertical[0];
     v_right.src = vertical[0];
     h_left.src = horizontal[0];
     h_right.src = horizontal[0];
-  }, red + yellow);
+  }, red);
 
   // culoarea galbena
   setTimeout(function () {
-    console.log("2");
+    console.log(yellow);
     v_left.src = vertical[1];
     v_right.src = vertical[1];
     h_left.src = horizontal[1];
     h_right.src = horizontal[1];
-  }, yellow);
+  }, yellow + red);
 
   //culoare rosie/verde
   setTimeout(function () {
-    console.log("3");
+    console.log(green);
     v_left.src = vertical[2];
     v_right.src = vertical[2];
     h_left.src = horizontal[2];
@@ -52,16 +52,14 @@ function startTrafficSignal() {
 
   // culoarea galbena
   setTimeout(function () {
-    console.log("4");
+    console.log(sum);
     v_left.src = vertical[1];
     v_right.src = vertical[1];
     h_left.src = horizontal[1];
     h_right.src = horizontal[1];
-  }, yellow);
+  }, sum);
 }
-console.log(red);
-console.log(yellow);
-console.log(green);
+console.log(sum);
 var timer = setInterval(function () {
   startTrafficSignal();
 }, sum);

@@ -113,5 +113,5 @@ function startTrafficSignal() {
 var timer = setInterval(function () {
   startTrafficSignal();
   console.log("executat, sum= ", sum);
-}, sum + yellow);
+}, sum);
 startTrafficSignal();

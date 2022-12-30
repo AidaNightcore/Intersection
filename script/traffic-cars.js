@@ -1,6 +1,7 @@
 // Functii pentru semafoarele pentru masini
 // initializez semafoarele cu anumite imagini
 function start() {
+  //Folosim 2 vectori de imagine care sa mearga in paralel, pentru benzile verticale si orizontale
   var vertical = [
     "../imagini/green-traffic-car.png",
     "../imagini/yellow-trafic-car.png",
@@ -11,10 +12,12 @@ function start() {
     "../imagini/yellow-trafic-car.png",
     "../imagini/green-traffic-car.png",
   ];
+  // Cream variabile care sa preia elementele din html
   var v_left = document.getElementById("light-vertical-left");
   var v_right = document.getElementById("light-vertical-right");
   var h_left = document.getElementById("light-horizontal-left");
   var h_right = document.getElementById("light-horizontal-right");
+  // Modificam imaginile, dandu-le o noua sursa de unde sa ia imaginile din vector
   v_left.src = vertical[0];
   v_right.src = vertical[0];
   h_left.src = horizontal[0];
@@ -23,8 +26,11 @@ function start() {
 start();
 
 // Lumini intermitente
+
+// functia, fiind intre inca niste paranteze si inca 2 la sfarsit, se va autoapela
 (function () {
   var i = 0;
+
   var intermitent_img = [
     "../imagini/intermitent-on.png",
     "../imagini/intermitent-off.png",
@@ -38,7 +44,8 @@ start();
     vr_intermitent.src = intermitent_img[i];
     hr_intermitent.src = intermitent_img[i];
     hl_intermitent.src = intermitent_img[i];
-    i = (i + 1) % intermitent_img.length; // se updateaza contorul traversarii arrayului de imagini folosirea unei formule cu rest
+    // se updateaza contorul traversarii arrayului de imagini folosirea unei formule cu rest
+    i = (i + 1) % intermitent_img.length;
   }
   toggle();
   setInterval(toggle, 700);
@@ -79,10 +86,10 @@ function startTrafficSignal() {
 
   // setTimeout() se foloseste pentru a crea un delay intre procesarea functiei si executarea ei
   // utilizam setTimeout() pentru a putea da fiecarei culori un timp individual de executare, depenedent de cel de dinainte
+  // setTimeout(bagi intr-o functie ce vrei sa folosesti, durata de timp de asteptat pana se executa functia)
 
   // culoarea verde/rosie
   setTimeout(function () {
-    console.log("1");
     // schimbam sursa imaginilor cu imaginile din string
     // a fost mai usor sa fie scris direct pozitia elementului decat de a crea un index, fiind un exemplu mic
     // la fel pentru toate celalalte functii
@@ -94,7 +101,6 @@ function startTrafficSignal() {
 
   // culoarea galbena
   setTimeout(function () {
-    console.log("2");
     v_left.src = vertical[1];
     v_right.src = vertical[1];
     h_left.src = horizontal[1];
@@ -103,7 +109,6 @@ function startTrafficSignal() {
 
   //culoare rosie/verde
   setTimeout(function () {
-    console.log("3");
     v_left.src = vertical[2];
     v_right.src = vertical[2];
     h_left.src = horizontal[2];
@@ -112,7 +117,6 @@ function startTrafficSignal() {
 
   // culoarea galbena
   setTimeout(function () {
-    console.log("4");
     v_left.src = vertical[1];
     v_right.src = vertical[1];
     h_left.src = horizontal[1];
@@ -126,6 +130,7 @@ var timer = setInterval(function () {
   startTrafficSignal();
   console.log("executat, sum= ", sum);
 }, sum);
-//e important ca delay-ul ultimei functii sa fie egal cu durata intervalului
+// e important ca delay-ul ultimei functii sa fie egal cu durata schimbarii culorilor in total
 
+// apelam functia de schimbare a culorilor
 startTrafficSignal();

@@ -1,43 +1,68 @@
-body,
 html {
   margin: 0;
   max-width: 100%;
 }
 
-body {
+.floating {
+  position: absolute;
+}
+
+html {
   background: url("../imagini/background.png") no-repeat;
   background-size: 100%;
 }
 
-.grid {
-  display: grid;
-  grid-template-areas:
-    "hl vs "
-    "vr  hl";
+.flex-whole {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
 }
 
-.rand {
-  width: 25vw;
+.light-pedestrian img {
+  width: 10%;
   height: auto;
-  grid-area: r;
 }
 
-.grid img {
+.ok img {
+  width: 20%;
+  height: auto;
+}
+.light-cars img {
   width: 10%;
   height: auto;
 }
 
 .right-horizontal {
-  grid-area: hr;
+  display: flex;
+  flex-direction: row;
 }
 
 .left-horizontal {
-  grid-area: hl;
+  display: flex;
+  flex-direction: row;
 }
-
 .left-vertical {
-  grid-area: vl;
+  display: flex;
+  flex-direction: column;
 }
 .right-vertical {
-  grid-area: vr;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.flex {
+  display: flex;
+}
+
+.up {
+  flex-direction: row;
+  align-items: flex-end;
+  padding-top: 0.4vw;
+  margin-bottom: 11vw;
+}
+.down {
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 11vw;
 }

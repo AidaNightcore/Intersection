@@ -8,102 +8,114 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Intersectie cu masini si pietoni</h1>
-
-    <div>
-      <h2>Selecteaza timpul culorilor</h2>
-      <div class="text">
-        <p>Rosu</p>
-        <input type="number" name="Red" id="red" />
-        <p>Galben</p>
-        <input type="number" name="Yellow" id="yellow" />
-      </div>
-    </div>
-    <!--Se foloseste grid pentru a seta intr-un rand si coloana imaginea semaforului-->
-    <div class="grid">
-      <div class="left-vertical">
-        <div class="light-pedestrian">
-          <img
-            src="../imagini/green-pedestrian.png"
-            alt=""
-            id="plight-vertical-left"
-          />
-        </div>
-        <div class="light-cars">
-          <img
-            src="../imagini/green-traffic-car.png"
-            alt="traffic light for cars with 3 colours"
-            class="traffic-cars"
-            id="light-vertical-left"
-          />
-          <img src="../imagini/intermitent-on.png" alt="" id="intermitent-vl" />
-        </div>
-      </div>
-
-      <div class="rand"></div>
-
-      <div class="right-vertical">
-        <div class="light-pedestrian">
-          <img
-            src="../imagini/green-pedestrian.png"
-            alt=""
-            id="plight-vertical-right"
-          />
-        </div>
-        <div class="light-cars">
-          <img
-            src="../imagini/green-traffic-car.png"
-            alt=""
-            class="traffic-cars"
-            id="light-vertical-right"
-          />
-          <img src="../imagini/intermitent-on.png" alt="" id="intermitent-vr" />
-        </div>
-      </div>
-
-      <div class="rand"></div>
-
-      <div class="left-horizontal">
-        <div class="light-pedestrian">
-          <img
-            src="../imagini/green-pedestrian.png"
-            alt=""
-            id="plight-horizontal-left"
-          />
-        </div>
-        <div class="light-cars">
-          <img
-            src="../imagini/green-traffic-car.png"
-            alt=""
-            class="traffic-cars"
-            id="light-horizontal-left"
-          />
-          <img src="../imagini/intermitent-on.png" alt="" id="intermitent-hl" />
-        </div>
-      </div>
-
-      <div class="rand"></div>
-
-      <div class="right-horizontal">
-        <div class="light-cars">
-          <img
-            src="../imagini/green-traffic-car.png"
-            alt=""
-            class="traffic-cars"
-            id="light-horizontal-right"
-          />
-          <img src="../imagini/intermitent-on.png" alt="" id="intermitent-hr" />
-        </div>
-        <div class="light-pedestrian">
-          <img
-            src="../imagini/green-pedestrian.png"
-            alt=""
-            id="plight-horizontal-right"
-          />
+    <div class="floating">
+      <h1>Intersectie cu masini si pietoni</h1>
+      <div>
+        <h2>Selecteaza timpul culorilor</h2>
+        <div class="text">
+          <p>Rosu</p>
+          <input type="number" name="Red" id="red" />
+          <p>Galben</p>
+          <input type="number" name="Yellow" id="yellow" />
         </div>
       </div>
     </div>
 
+    <div class="flex-whole">
+      <div class="flex up">
+        <div class="left-horizontal">
+          <div class="light-pedestrian ok">
+            <img
+              src="../imagini/green-pedestrian.png"
+              alt=""
+              id="plight-horizontal-left"
+            />
+          </div>
+          <div class="light-cars">
+            <img
+              src="../imagini/green-traffic-car.png"
+              alt=""
+              class="traffic-cars"
+              id="light-horizontal-left"
+            />
+            <img
+              src="../imagini/intermitent-on.png"
+              alt=""
+              id="intermitent-hl"
+            />
+          </div>
+        </div>
+        <div class="left-vertical">
+          <div class="light-pedestrian">
+            <img
+              src="../imagini/green-pedestrian.png"
+              alt=""
+              id="plight-vertical-left"
+            />
+          </div>
+          <div class="light-cars">
+            <img
+              src="../imagini/green-traffic-car.png"
+              alt="traffic light for cars with 3 colours"
+              class="traffic-cars"
+              id="light-vertical-left"
+            />
+            <img
+              src="../imagini/intermitent-on.png"
+              alt=""
+              id="intermitent-vl"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex down">
+        <div class="right-horizontal">
+          <div class="light-cars">
+            <img
+              src="../imagini/green-traffic-car.png"
+              alt=""
+              class="traffic-cars"
+              id="light-horizontal-right"
+            />
+            <img
+              src="../imagini/intermitent-on.png"
+              alt=""
+              id="intermitent-hr"
+            />
+          </div>
+          <div class="light-pedestrian ok">
+            <img
+              src="../imagini/green-pedestrian.png"
+              alt=""
+              id="plight-horizontal-right"
+            />
+          </div>
+        </div>
+        <div class="right-vertical">
+          <div class="light-pedestrian">
+            <img
+              src="../imagini/green-pedestrian.png"
+              alt=""
+              id="plight-vertical-right"
+            />
+          </div>
+          <div class="light-cars">
+            <img
+              src="../imagini/green-traffic-car.png"
+              alt=""
+              class="traffic-cars"
+              id="light-vertical-right"
+            />
+            <img
+              src="../imagini/intermitent-on.png"
+              alt=""
+              id="intermitent-vr"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="../script/traffic-pedestrian.js"></script>
     <script src="../script/traffic-cars.js"></script>
   </body>

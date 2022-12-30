@@ -128,7 +128,6 @@ function startTrafficSignal() {
 // se creaza un timer pentru a repeta functia startTrafficSignal() la nesfarsit
 var timer = setInterval(function () {
   startTrafficSignal();
-  console.log("executat, sum= ", sum);
 }, sum);
 // e important ca delay-ul ultimei functii sa fie egal cu durata schimbarii culorilor in total
 

@@ -1,6 +1,10 @@
+// Trafic pentru pietoni
+// Variabilele ce preiau din pagina de la utilizator valorile introduse
 var pred = document.getElementById("red").value;
 var pyellow = document.getElementById("yellow").value;
 var pgreen = document.getElementById("green").value;
+
+//constanta pentru a transforma in milisecunde
 const x = 1000;
 pred *= x;
 pyellow *= x;
@@ -32,10 +36,10 @@ function startPedestrianLights() {
 
   // culoarea rosie
   setTimeout(function () {
-    pv_left.src = pvertical[0];
-    pv_right.src = pvertical[0];
-    ph_left.src = phorizontal[0];
-    ph_right.src = phorizontal[0];
+    pv_left.src = pvertical[1];
+    pv_right.src = pvertical[1];
+    ph_left.src = phorizontal[1];
+    ph_right.src = phorizontal[1];
   }, pgreen);
 }
 var timer = setInterval(function () {

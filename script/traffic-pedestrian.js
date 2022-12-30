@@ -2,14 +2,13 @@
 // Variabilele ce preiau din pagina de la utilizator valorile introduse
 var pred = document.getElementById("red").value;
 var pyellow = document.getElementById("yellow").value;
-var pgreen = document.getElementById("green").value;
 
 //constanta pentru a transforma in milisecunde
 const x = 1000;
 pred *= x;
 pyellow *= x;
-pgreen *= x;
-var psum = pred + pyellow + pgreen + pyellow;
+
+var psum = pred + pyellow + pred + pyellow;
 
 function startPedestrianLights() {
   var pvertical = [
@@ -40,7 +39,7 @@ function startPedestrianLights() {
     pv_right.src = pvertical[1];
     ph_left.src = phorizontal[1];
     ph_right.src = phorizontal[1];
-  }, pgreen);
+  }, pred);
 }
 var timer = setInterval(function () {
   startPedestrianLights();

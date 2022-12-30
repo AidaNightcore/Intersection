@@ -1,5 +1,25 @@
 // Functii pentru semafoarele pentru masini
-
+function start() {
+  var vertical = [
+    "../imagini/green-traffic-car.png",
+    "../imagini/yellow-trafic-car.png",
+    "../imagini/red-traffic-car.png",
+  ];
+  var horizontal = [
+    "../imagini/red-traffic-car.png",
+    "../imagini/yellow-trafic-car.png",
+    "../imagini/green-traffic-car.png",
+  ];
+  var v_left = document.getElementById("light-vertical-left");
+  var v_right = document.getElementById("light-vertical-right");
+  var h_left = document.getElementById("light-horizontal-left");
+  var h_right = document.getElementById("light-horizontal-right");
+  v_left.src = vertical[0];
+  v_right.src = vertical[0];
+  h_left.src = horizontal[0];
+  h_right.src = horizontal[0];
+}
+start();
 // Lumini intermitente
 (function () {
   var i = 0;
@@ -27,14 +47,13 @@
 // Variabilele ce preiau din pagina de la utilizator valorile introduse
 var red = document.getElementById("red").value;
 var yellow = document.getElementById("yellow").value;
-var green = document.getElementById("green").value;
 
 //constanta pentru a transforma in milisecunde
 const y = 1000;
 red *= y;
 yellow *= y;
-green *= y;
-var sum = red + yellow + green + yellow;
+
+var sum = red + yellow + red + yellow;
 
 // Functia care schimba imaginile
 function startTrafficSignal() {
@@ -56,6 +75,7 @@ function startTrafficSignal() {
 
   // culoarea verde/rosie
   setTimeout(function () {
+    console.log("1");
     v_left.src = vertical[0];
     v_right.src = vertical[0];
     h_left.src = horizontal[0];
@@ -64,6 +84,7 @@ function startTrafficSignal() {
 
   // culoarea galbena
   setTimeout(function () {
+    console.log("2");
     v_left.src = vertical[1];
     v_right.src = vertical[1];
     h_left.src = horizontal[1];
@@ -72,14 +93,16 @@ function startTrafficSignal() {
 
   //culoare rosie/verde
   setTimeout(function () {
+    console.log("3");
     v_left.src = vertical[2];
     v_right.src = vertical[2];
     h_left.src = horizontal[2];
     h_right.src = horizontal[2];
-  }, green + yellow + red);
+  }, red + yellow + yellow);
 
   // culoarea galbena
   setTimeout(function () {
+    console.log("4");
     v_left.src = vertical[1];
     v_right.src = vertical[1];
     h_left.src = horizontal[1];
@@ -89,5 +112,6 @@ function startTrafficSignal() {
 
 var timer = setInterval(function () {
   startTrafficSignal();
-}, sum);
+  console.log("executat, sum= ", sum);
+}, sum + yellow);
 startTrafficSignal();

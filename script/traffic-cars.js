@@ -1,4 +1,5 @@
 // Functii pentru semafoarele pentru masini
+// initializez semafoarele cu anumite imagini
 function start() {
   var vertical = [
     "../imagini/green-traffic-car.png",
@@ -20,6 +21,7 @@ function start() {
   h_right.src = horizontal[0];
 }
 start();
+
 // Lumini intermitente
 (function () {
   var i = 0;
@@ -68,19 +70,27 @@ function startTrafficSignal() {
     "../imagini/yellow-trafic-car.png",
     "../imagini/green-traffic-car.png",
   ];
+
+  // declaram variabile care sa preia elementele din HTML si sa le putem transforma
   var v_left = document.getElementById("light-vertical-left");
   var v_right = document.getElementById("light-vertical-right");
   var h_left = document.getElementById("light-horizontal-left");
   var h_right = document.getElementById("light-horizontal-right");
 
+  // setTimeout() se foloseste pentru a crea un delay intre procesarea functiei si executarea ei
+  // utilizam setTimeout() pentru a putea da fiecarei culori un timp individual de executare, depenedent de cel de dinainte
+
   // culoarea verde/rosie
   setTimeout(function () {
     console.log("1");
+    // schimbam sursa imaginilor cu imaginile din string
+    // a fost mai usor sa fie scris direct pozitia elementului decat de a crea un index, fiind un exemplu mic
+    // la fel pentru toate celalalte functii
     v_left.src = vertical[0];
     v_right.src = vertical[0];
     h_left.src = horizontal[0];
     h_right.src = horizontal[0];
-  }, red);
+  }, 0);
 
   // culoarea galbena
   setTimeout(function () {
@@ -89,7 +99,7 @@ function startTrafficSignal() {
     v_right.src = vertical[1];
     h_left.src = horizontal[1];
     h_right.src = horizontal[1];
-  }, yellow + red);
+  }, red);
 
   //culoare rosie/verde
   setTimeout(function () {
@@ -98,7 +108,7 @@ function startTrafficSignal() {
     v_right.src = vertical[2];
     h_left.src = horizontal[2];
     h_right.src = horizontal[2];
-  }, red + yellow + yellow);
+  }, red + yellow);
 
   // culoarea galbena
   setTimeout(function () {
@@ -107,11 +117,15 @@ function startTrafficSignal() {
     v_right.src = vertical[1];
     h_left.src = horizontal[1];
     h_right.src = horizontal[1];
-  }, sum);
+  }, red + red + yellow);
 }
 
+// setInterval() repeta o functie odata la un interval, pe o durata nedeterminata
+// se creaza un timer pentru a repeta functia startTrafficSignal() la nesfarsit
 var timer = setInterval(function () {
   startTrafficSignal();
   console.log("executat, sum= ", sum);
 }, sum);
+//e important ca delay-ul ultimei functii sa fie egal cu durata intervalului
+
 startTrafficSignal();

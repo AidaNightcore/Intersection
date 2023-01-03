@@ -59,9 +59,6 @@ var timer = setInterval(function () {
 }, psum);
 // e important ca delay-ul ultimei functii sa fie egal cu durata schimbarii culorilor in total
 
-// apelam functia de schimbare a culorilor
-startPedestrianLights();
-
 function stopPedestrianSignal() {
   clearInterval(window.intervalID);
 }

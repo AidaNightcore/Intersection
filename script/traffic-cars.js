@@ -131,8 +131,6 @@ var timer = setInterval(function () {
 }, sum);
 // e important ca delay-ul ultimei functii sa fie egal cu durata schimbarii culorilor in total
 
-// apelam functia de schimbare a culorilor
-startTrafficSignal();
 
 function stopTrafficSignal() {
   clearInterval(window.intervalID);

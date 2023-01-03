@@ -61,3 +61,34 @@ var timer = setInterval(function () {
 
 // apelam functia de schimbare a culorilor
 startPedestrianLights();
+
+function stopPedestrianSignal() {
+  clearInterval(window.intervalID);
+}
+
+function pmain() {
+  const pp = 1000;
+  var pred = parseInt(document.getElementById("red").value);
+  var pyellow = parseInt(document.getElementById("yellow").value);
+  var pgreen = parseInt(document.getElementById("green").value);
+  var pinputError = document.getElementById("inputError");
+  pinputError.innerHTML = "";
+  if (!Number.isNaN(pred) && !Number.isNaN(pyellow) && !Number.isNaN(pgreen)) {
+    pred *= pp;
+    pyellow *= pp;
+    pgreen *= pp;
+    var psum = pred + pyellow + pgreen + pyellow;
+
+    startPedestrianSignal(pred, pyellow, pgreen, psum);
+    window.intervalID = setInterval(
+      startPedestrianSignal(),
+      psum,
+      pred,
+      pyellow,
+      pgreen,
+      psum
+    );
+  } else {
+    pinputError.innerHTML = "Error: please input valid numbers!";
+  }
+}

@@ -82,7 +82,6 @@ function pmain() {
       psum,
       pred,
       pyellow,
-
       psum
     );
   } else {

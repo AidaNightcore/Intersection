@@ -131,7 +131,6 @@ var timer = setInterval(function () {
 }, sum);
 // e important ca delay-ul ultimei functii sa fie egal cu durata schimbarii culorilor in total
 
-
 function stopTrafficSignal() {
   clearInterval(window.intervalID);
 }
@@ -145,7 +144,7 @@ function main() {
   if (!Number.isNaN(red) && !Number.isNaN(yellow)) {
     red *= p;
     yellow *= p;
-    green *= p;
+
     var sum = red + yellow + red + yellow;
 
     startTrafficSignal(red, yellow, sum);

@@ -142,24 +142,16 @@ function main() {
   const p = 1000;
   var red = parseInt(document.getElementById("red").value);
   var yellow = parseInt(document.getElementById("yellow").value);
-  var green = parseInt(document.getElementById("green").value);
   var inputError = document.getElementById("inputError");
   inputError.innerHTML = "";
-  if (!Number.isNaN(red) && !Number.isNaN(yellow) && !Number.isNaN(green)) {
+  if (!Number.isNaN(red) && !Number.isNaN(yellow)) {
     red *= p;
     yellow *= p;
     green *= p;
-    var sum = red + yellow + green + yellow;
-    console.log(red);
-    startTrafficSignal(red, yellow, green, sum);
-    window.intervalID = setInterval(
-      startTrafficSignal,
-      sum,
-      red,
-      yellow,
-      green,
-      sum
-    );
+    var sum = red + yellow + red + yellow;
+
+    startTrafficSignal(red, yellow, sum);
+    window.intervalID = setInterval(startTrafficSignal, sum, red, yellow, sum);
   } else {
     inputError.innerHTML = "Error: please input valid numbers!";
   }

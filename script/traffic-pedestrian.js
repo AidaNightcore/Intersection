@@ -70,22 +70,22 @@ function pmain() {
   const pp = 1000;
   var pred = parseInt(document.getElementById("red").value);
   var pyellow = parseInt(document.getElementById("yellow").value);
-  var pgreen = parseInt(document.getElementById("green").value);
+
   var pinputError = document.getElementById("inputError");
   pinputError.innerHTML = "";
-  if (!Number.isNaN(pred) && !Number.isNaN(pyellow) && !Number.isNaN(pgreen)) {
+  if (!Number.isNaN(pred) && !Number.isNaN(pyellow)) {
     pred *= pp;
     pyellow *= pp;
-    pgreen *= pp;
-    var psum = pred + pyellow + pgreen + pyellow;
 
-    startPedestrianSignal(pred, pyellow, pgreen, psum);
+    var psum = pred + pyellow + pred + pyellow;
+
+    startPedestrianSignal(pred, pyellow, psum);
     window.intervalID = setInterval(
       startPedestrianSignal(),
       psum,
       pred,
       pyellow,
-      pgreen,
+
       psum
     );
   } else {

@@ -1,4 +1,10 @@
+const y = 1000;
+var red = 1 * y;
+var yellow = 1 * y;
+var sum = red + yellow + red + yellow;
+
 // Functii pentru semafoarele pentru masini
+
 // initializez semafoarele cu anumite imagini
 function start() {
   //Folosim 2 vectori de imagine care sa mearga in paralel, pentru benzile verticale si orizontale
@@ -53,18 +59,7 @@ start();
 
 // Schimbarea luminilor semaforului pentru masini
 
-// Variabilele ce preiau din pagina de la utilizator valorile introduse
-var red = document.getElementById("red").value;
-var yellow = document.getElementById("yellow").value;
-
-//constanta pentru a transforma in milisecunde
-const y = 1000;
-red *= y;
-yellow *= y;
-
-var sum = red + yellow + red + yellow;
-
-// Functia care schimba imaginile
+// Functia care schimba imaginile semaforului pt masini
 function startTrafficSignal() {
   //Folosim 2 vectori de imagine care sa mearga in paralel, pentru benzile verticale si orizontale
   var vertical = [
@@ -126,30 +121,35 @@ function startTrafficSignal() {
 
 // setInterval() repeta o functie odata la un interval, pe o durata nedeterminata
 // se creaza un timer pentru a repeta functia startTrafficSignal() la nesfarsit
-var timer = setInterval(function () {
-  startTrafficSignal();
-}, sum);
+
 // e important ca delay-ul ultimei functii sa fie egal cu durata schimbarii culorilor in total
 
-function stopTrafficSignal() {
+function Stop() {
   clearInterval(window.intervalID);
 }
-
-function main() {
-  const p = 1000;
-  var red = parseInt(document.getElementById("red").value);
-  var yellow = parseInt(document.getElementById("yellow").value);
+function updateDelays() {
+  red = document.getElementById("red").value * y;
+  yellow = document.getElementById("yellow").value * y;
+  if (Number.isNaN(parseFloat(red)) || Number.isNaN(parseFloat(yellow))) {
+    red = 1 * y;
+    yellow = 1 * y;
+  }
+  sum = red + yellow + red + yellow;
+}
+function Start() {
+  if (window.intervalID) {
+    clearInterval(window.intervalID);
+  }
+  updateDelays();
   var inputError = document.getElementById("inputError");
+
   inputError.innerHTML = "";
   if (!Number.isNaN(red) && !Number.isNaN(yellow)) {
-    red *= p;
-    yellow *= p;
-
-    var sum = red + yellow + red + yellow;
-
-    startTrafficSignal(red, yellow, sum);
-    window.intervalID = setInterval(startTrafficSignal, sum, red, yellow, sum);
-  } else {
-    inputError.innerHTML = "Error: please input valid numbers!";
-  }
+    window.intervalID = setInterval(function () {
+      startTrafficSignal();
+    }, sum);
+  } else inputError.innerHTML = "Introduce-ti numere valide";
 }
+//
+
+// if input is invalid it defaults to 1s

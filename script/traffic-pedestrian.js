@@ -1,16 +1,5 @@
 // Trafic pentru pietoni
 
-// Variabilele ce preiau din pagina de la utilizator valorile introduse
-var pred = document.getElementById("red").value;
-var pyellow = document.getElementById("yellow").value;
-
-//constanta pentru a transforma in milisecunde
-const x = 1000;
-pred *= x;
-pyellow *= x;
-
-var psum = pred + pyellow + pred + pyellow;
-
 function startPedestrianLights() {
   //Folosim 2 vectori de imagine care sa mearga in paralel, pentru benzile verticale si orizontale
   var pvertical = [
@@ -50,41 +39,25 @@ function startPedestrianLights() {
     pv_right.src = pvertical[1];
     ph_left.src = phorizontal[1];
     ph_right.src = phorizontal[1];
-  }, pred + pyellow);
+  }, red + yellow);
 }
 // setInterval() repeta o functie odata la un interval, pe o durata nedeterminata
 // se creaza un timer pentru a repeta functia startPedestrianLights() la nesfarsit
-var timer = setInterval(function () {
-  startPedestrianLights();
-}, psum);
+
 // e important ca delay-ul ultimei functii sa fie egal cu durata schimbarii culorilor in total
 
-function stopPedestrianSignal() {
-  clearInterval(window.intervalID);
+function pStop() {
+  clearInterval(window.pintervalID);
 }
-
-function pmain() {
-  const pp = 1000;
-  var pred = parseInt(document.getElementById("red").value);
-  var pyellow = parseInt(document.getElementById("yellow").value);
-
-  var pinputError = document.getElementById("inputError");
-  pinputError.innerHTML = "";
-  if (!Number.isNaN(pred) && !Number.isNaN(pyellow)) {
-    pred *= pp;
-    pyellow *= pp;
-
-    var psum = pred + pyellow + pred + pyellow;
-
-    startPedestrianSignal(pred, pyellow, psum);
-    window.intervalID = setInterval(
-      startPedestrianSignal(),
-      psum,
-      pred,
-      pyellow,
-      psum
-    );
-  } else {
-    pinputError.innerHTML = "Error: please input valid numbers!";
+function pStart() {
+  if (window.pintervalID) {
+    pStop();
   }
+  updateDelays();
+  var inputError = document.getElementById("inputError");
+  if (!Number.isNaN(red) && !Number.isNaN(yellow)) {
+    window.pintervalID = setInterval(function () {
+      startPedestrianLights();
+    }, sum);
+  } else inputError.innerHTML = "Introduce-ti numere valide";
 }

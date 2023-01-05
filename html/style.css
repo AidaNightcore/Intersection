@@ -41,6 +41,7 @@ html {
   display: flex;
   flex-direction: row;
 }
+
 .left-vertical {
   display: flex;
   flex-direction: column;
@@ -70,6 +71,7 @@ html {
   margin-left: 17.5vw;
   margin-right: 0;
 }
+
 #intermitent-hr,
 #intermitent-vr {
   margin-left: 0;

@@ -54,8 +54,9 @@ function pStart() {
     pStop();
   }
   updateDelays();
-
-  window.pintervalID = setInterval(function () {
-    startPedestrianLights();
-  }, sum);
+  if (isInputValid()) {
+    window.pintervalID = setInterval(function () {
+      startPedestrianLights();
+    }, sum);
+  }
 }

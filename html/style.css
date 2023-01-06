@@ -1,10 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 html {
   margin: 0;
   max-width: 100%;
+  font-family: "Comfortaa", cursive;
 }
 
 .menu {
   position: absolute;
+  bottom: 3.3vw;
+  left: 1vw;
+  color: #e3e3e3;
 }
 
 .background {
@@ -58,14 +63,14 @@ html {
 .up {
   flex-direction: row;
   align-items: flex-end;
-  padding-top: 0.4vw;
-  margin-bottom: 11vw;
+  margin-top: 0.7vw;
+  margin-bottom: 11.3vw;
 }
 .down {
   flex-direction: row-reverse;
   align-items: flex-start;
   justify-content: flex-end;
-  margin-top: 11vw;
+  margin-top: 11.3vw;
 }
 .down img {
   margin-left: 17.5vw;
@@ -81,4 +86,63 @@ html {
   margin-left: 0;
   width: 23%;
   height: auto;
+}
+
+button {
+  background: #1f1f1f70;
+  border: none;
+  width: 9.3vw;
+  height: 2vw;
+  font-size: 1rem;
+  border-radius: 0.3vw;
+  margin: 0.5vw 0;
+  color: #e3e3e3;
+}
+button:hover {
+  background: #1f1f1f90;
+}
+
+input {
+  background: #1f1f1f70;
+  border: none;
+  width: 9vw;
+  height: 2vw;
+  font-size: 1rem;
+  border-radius: 0.3vw;
+  margin: 0.03vw;
+
+  color: #e3e3e3;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.text {
+  margin: 0.05vw;
+}
+p {
+  margin: 0.05vw;
+  font-size: 1.3rem;
+}
+h1 {
+  font-size: 2rem;
+  position: absolute;
+  left: 1vw;
+  top: 1vw;
+  margin: 0;
+  color: #e3e3e3;
+}
+
+h2 {
+  margin: 0.05vw 0.05vw 1vw;
+  font-size: 1.5rem;
 }

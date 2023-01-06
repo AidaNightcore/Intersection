@@ -50,16 +50,18 @@ var hl_intermitent = document.getElementById("intermitent-hl");
 function updateDelays() {
   red = parseFloat(document.getElementById("red").value) * y;
   yellow = parseFloat(document.getElementById("yellow").value) * y;
-  if (Number.isNaN(red) || Number.isNaN(yellow) || red <= 0 || yellow <= 0) {
-    red = 1 * y;
-    yellow = 1 * y;
-  }
-  if (red <= 0 || yellow <= 0) {
-    inputError.innerHTML = "Introduceti un numar pozitiv nenul";
-    // warning when valid number but 0 or below
-  } else {
-    inputError.innerHTML = "Introduceti un numar valid";
-    // warning for invalid input
+  if (!isInputValid()) {
+    inputError.innerHTML =
+      "Introduceti un numar pozitiv nenul, pana tunci semaforul va functiona dupa valori de baza";
   }
   sum = red + yellow + red + yellow;
+}
+
+function isInputValid() {
+  return !(
+    Number.isNaN(red) ||
+    Number.isNaN(yellow) ||
+    red <= 0 ||
+    yellow <= 0
+  );
 }

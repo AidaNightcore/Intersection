@@ -14,21 +14,30 @@ start();
 // Lumini intermitente
 
 // functia, fiind intre inca niste paranteze si inca 2 la sfarsit, se va autoapela
-(function () {
-  var i = 0;
 
-  function toggle() {
-    vl_intermitent.src = intermitent_img[i];
-    vr_intermitent.src = intermitent_img[i];
-    hr_intermitent.src = intermitent_img[i];
-    hl_intermitent.src = intermitent_img[i];
-    // se updateaza contorul traversarii arrayului de imagini folosirea unei formule cu rest
-    i = (i + 1) % intermitent_img.length;
-  }
-  toggle();
-  setInterval(toggle, 700);
-})();
+function startIntermitentLights() {
+  //Folosim 2 vectori de imagine care sa mearga in paralel, pentru benzile verticale si orizontale
 
+  // setTimeout() se foloseste pentru a crea un delay intre procesarea functiei si executarea ei
+  // utilizam setTimeout() pentru a putea da fiecarei culori un timp individual de executare, depenedent de cel de dinainte
+  // setTimeout(bagi intr-o functie ce vrei sa folosesti, durata de timp de asteptat pana se executa functia)
+
+  // culoarea verde
+  setTimeout(function () {
+    vl_intermitent.src = intermitent_img[1];
+    vr_intermitent.src = intermitent_img[1];
+    hr_intermitent.src = intermitent_img[0];
+    hl_intermitent.src = intermitent_img[0];
+  }, red + yellow);
+
+  // culoarea rosie
+  setTimeout(function () {
+    vl_intermitent.src = intermitent_img[0];
+    vr_intermitent.src = intermitent_img[0];
+    hr_intermitent.src = intermitent_img[1];
+    hl_intermitent.src = intermitent_img[1];
+  }, 0);
+}
 // Schimbarea luminilor semaforului pentru masini
 
 // Functia care schimba imaginile semaforului pt masini
@@ -86,10 +95,12 @@ function Start() {
     clearInterval(window.intervalID);
   }
   updateDelays();
-
-  window.intervalID = setInterval(function () {
-    startTrafficSignal();
-  }, sum);
+  if (isInputValid()) {
+    window.intervalID = setInterval(function () {
+      startTrafficSignal();
+      startIntermitentLights();
+    }, sum);
+  }
 }
 //
 

@@ -22,14 +22,6 @@ function startIntermitentLights() {
   // utilizam setTimeout() pentru a putea da fiecarei culori un timp individual de executare, depenedent de cel de dinainte
   // setTimeout(bagi intr-o functie ce vrei sa folosesti, durata de timp de asteptat pana se executa functia)
 
-  // culoarea verde
-  setTimeout(function () {
-    vl_intermitent.src = intermitent_img[1];
-    vr_intermitent.src = intermitent_img[1];
-    hr_intermitent.src = intermitent_img[0];
-    hl_intermitent.src = intermitent_img[0];
-  }, red + yellow);
-
   // culoarea rosie
   setTimeout(function () {
     vl_intermitent.src = intermitent_img[0];
@@ -37,6 +29,30 @@ function startIntermitentLights() {
     hr_intermitent.src = intermitent_img[1];
     hl_intermitent.src = intermitent_img[1];
   }, 0);
+
+  //culoarea galbena
+  setTimeout(function () {
+    vl_intermitent.src = intermitent_img[1];
+    vr_intermitent.src = intermitent_img[1];
+    hr_intermitent.src = intermitent_img[1];
+    hl_intermitent.src = intermitent_img[1];
+  }, red);
+
+  //culoarea verde
+  setTimeout(function () {
+    vl_intermitent.src = intermitent_img[1];
+    vr_intermitent.src = intermitent_img[1];
+    hr_intermitent.src = intermitent_img[0];
+    hl_intermitent.src = intermitent_img[0];
+  }, red + yellow);
+
+  //culoarea galbena
+  setTimeout(function () {
+    vl_intermitent.src = intermitent_img[1];
+    vr_intermitent.src = intermitent_img[1];
+    hr_intermitent.src = intermitent_img[1];
+    hl_intermitent.src = intermitent_img[1];
+  }, red + red + yellow);
 }
 // Schimbarea luminilor semaforului pentru masini
 

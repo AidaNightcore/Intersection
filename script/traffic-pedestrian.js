@@ -54,10 +54,8 @@ function pStart() {
     pStop();
   }
   updateDelays();
-  var inputError = document.getElementById("inputError");
-  if (!Number.isNaN(red) && !Number.isNaN(yellow)) {
-    window.pintervalID = setInterval(function () {
-      startPedestrianLights();
-    }, sum);
-  } else inputError.innerHTML = "Introduce-ti numere valide";
+
+  window.pintervalID = setInterval(function () {
+    startPedestrianLights();
+  }, sum);
 }

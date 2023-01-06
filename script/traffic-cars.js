@@ -1,28 +1,8 @@
-const y = 1000;
-var red = 1 * y;
-var yellow = 1 * y;
-var sum = red + yellow + red + yellow;
-
 // Functii pentru semafoarele pentru masini
 
 // initializez semafoarele cu anumite imagini
 function start() {
   //Folosim 2 vectori de imagine care sa mearga in paralel, pentru benzile verticale si orizontale
-  var vertical = [
-    "../imagini/green-traffic-car.png",
-    "../imagini/yellow-trafic-car.png",
-    "../imagini/red-traffic-car.png",
-  ];
-  var horizontal = [
-    "../imagini/red-traffic-car.png",
-    "../imagini/yellow-trafic-car.png",
-    "../imagini/green-traffic-car.png",
-  ];
-  // Cream variabile care sa preia elementele din html
-  var v_left = document.getElementById("light-vertical-left");
-  var v_right = document.getElementById("light-vertical-right");
-  var h_left = document.getElementById("light-horizontal-left");
-  var h_right = document.getElementById("light-horizontal-right");
   // Modificam imaginile, dandu-le o noua sursa de unde sa ia imaginile din vector
   v_left.src = vertical[0];
   v_right.src = vertical[0];
@@ -37,14 +17,6 @@ start();
 (function () {
   var i = 0;
 
-  var intermitent_img = [
-    "../imagini/intermitent-on.png",
-    "../imagini/intermitent-off.png",
-  ];
-  var vl_intermitent = document.getElementById("intermitent-vl");
-  var vr_intermitent = document.getElementById("intermitent-vr");
-  var hr_intermitent = document.getElementById("intermitent-hr");
-  var hl_intermitent = document.getElementById("intermitent-hl");
   function toggle() {
     vl_intermitent.src = intermitent_img[i];
     vr_intermitent.src = intermitent_img[i];
@@ -61,24 +33,6 @@ start();
 
 // Functia care schimba imaginile semaforului pt masini
 function startTrafficSignal() {
-  //Folosim 2 vectori de imagine care sa mearga in paralel, pentru benzile verticale si orizontale
-  var vertical = [
-    "../imagini/green-traffic-car.png",
-    "../imagini/yellow-trafic-car.png",
-    "../imagini/red-traffic-car.png",
-  ];
-  var horizontal = [
-    "../imagini/red-traffic-car.png",
-    "../imagini/yellow-trafic-car.png",
-    "../imagini/green-traffic-car.png",
-  ];
-
-  // declaram variabile care sa preia elementele din HTML si sa le putem transforma
-  var v_left = document.getElementById("light-vertical-left");
-  var v_right = document.getElementById("light-vertical-right");
-  var h_left = document.getElementById("light-horizontal-left");
-  var h_right = document.getElementById("light-horizontal-right");
-
   // setTimeout() se foloseste pentru a crea un delay intre procesarea functiei si executarea ei
   // utilizam setTimeout() pentru a putea da fiecarei culori un timp individual de executare, depenedent de cel de dinainte
   // setTimeout(bagi intr-o functie ce vrei sa folosesti, durata de timp de asteptat pana se executa functia)
@@ -127,28 +81,15 @@ function startTrafficSignal() {
 function Stop() {
   clearInterval(window.intervalID);
 }
-function updateDelays() {
-  red = document.getElementById("red").value * y;
-  yellow = document.getElementById("yellow").value * y;
-  if (Number.isNaN(parseFloat(red)) || Number.isNaN(parseFloat(yellow))) {
-    red = 1 * y;
-    yellow = 1 * y;
-  }
-  sum = red + yellow + red + yellow;
-}
 function Start() {
   if (window.intervalID) {
     clearInterval(window.intervalID);
   }
   updateDelays();
-  var inputError = document.getElementById("inputError");
 
-  inputError.innerHTML = "";
-  if (!Number.isNaN(red) && !Number.isNaN(yellow)) {
-    window.intervalID = setInterval(function () {
-      startTrafficSignal();
-    }, sum);
-  } else inputError.innerHTML = "Introduce-ti numere valide";
+  window.intervalID = setInterval(function () {
+    startTrafficSignal();
+  }, sum);
 }
 //
 

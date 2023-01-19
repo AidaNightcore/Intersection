@@ -1,91 +1,101 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 html {
   margin: 0;
+  padding: 0;
   max-width: 100%;
+  overflow-x: none;
+  overflow-y: none;
   font-family: "Comfortaa", cursive;
+}
+
+h1 {
+  font-size: 2rem;
+  position: absolute;
+  left: 1vw;
+  top: 1vh;
+  margin: 0;
+  color: #e3e3e3;
+}
+
+h2 {
+  margin: 0.05vh 0.05vw 1vh;
+  font-size: 1.5rem;
 }
 
 .menu {
   position: absolute;
-  bottom: 3.3vw;
+  bottom: 3.3vh;
   left: 1vw;
   color: #e3e3e3;
+  z-index: 1;
 }
 
 .background {
-  background: url("../imagini/background.png") no-repeat;
+  background: url("../imagini/background.jpeg") no-repeat center;
   background-size: 100%;
 }
 
-.flex-whole {
+.light-pedestrian-intermitent img {
+  width: 2vw;
+  height: auto;
+}
+
+.light-cars img {
+  width: 2vw;
+  height: auto;
+}
+
+.right-horizontal,
+.left-horizontal,
+.right-vertical,
+.left-vertical {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 40%;
+}
+
+.left-horizontal,
+.left-vertical {
+  flex-direction: column;
+}
+.right-horizontal,
+.right-vertical {
+  flex-direction: column-reverse;
+}
+
+.right-horizontal .light-pedestrian-intermitent img {
+  transform: rotate(90deg);
+  margin: 0 1.5vw;
+}
+.right-vertical .light-cars,
+.left-vertical .light-cars {
   display: flex;
   flex-direction: column;
-  margin-left: 10vw;
 }
-
-.light-pedestrian img {
-  width: 10%;
-  height: auto;
-}
-
-.ok img {
-  width: 20%;
-  height: auto;
-}
-.light-cars img {
-  width: 10%;
-  height: auto;
-}
-
-.right-horizontal {
+.right-vertical .light-pedestrian-intermitent,
+.left-vertical .light-pedestrian-intermitent {
   display: flex;
   flex-direction: row;
 }
 
 .left-horizontal {
-  display: flex;
-  flex-direction: row;
 }
-
+.left-horizontal .light-pedestrian-intermitent img {
+  transform: rotate(90deg);
+  margin: 0 1.5vw;
+}
 .left-vertical {
-  display: flex;
-  flex-direction: column;
+}
+.left-vertical .light-cars img {
+  transform: rotate(90deg);
+  margin: 0 1.5vw;
 }
 .right-vertical {
-  display: flex;
-  flex-direction: column-reverse;
 }
-
-.flex {
-  display: flex;
-}
-
-.up {
-  flex-direction: row;
-  align-items: flex-end;
-  margin-top: 0.7vw;
-  margin-bottom: 11.3vw;
-}
-.down {
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  justify-content: flex-end;
-  margin-top: 11.3vw;
-}
-.down img {
-  margin-left: 17.5vw;
-  margin-right: 0;
-}
-
-#intermitent-hr,
-#intermitent-vr {
-  margin-left: 0;
-}
-
-#plight-horizontal-right {
-  margin-left: 0;
-  width: 23%;
-  height: auto;
+.right-vertical .light-cars img {
+  transform: rotate(90deg);
+  margin: 0 1.5vw;
 }
 
 button {
@@ -110,7 +120,6 @@ input {
   font-size: 1rem;
   border-radius: 0.3vw;
   margin: 0.03vw;
-
   color: #e3e3e3;
 }
 
@@ -132,17 +141,4 @@ input[type="number"] {
 p {
   margin: 0.05vw;
   font-size: 1.3rem;
-}
-h1 {
-  font-size: 2rem;
-  position: absolute;
-  left: 1vw;
-  top: 1vw;
-  margin: 0;
-  color: #e3e3e3;
-}
-
-h2 {
-  margin: 0.05vw 0.05vw 1vw;
-  font-size: 1.5rem;
 }

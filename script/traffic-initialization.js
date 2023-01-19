@@ -5,7 +5,6 @@ var sum = red + yellow + red + yellow;
 var inputError = document.getElementById("inputError");
 inputError.innerHTML = "";
 
-//Folosim 2 vectori de imagine care sa mearga in paralel, pentru benzile verticale si orizontale
 var pvertical = [
   "../imagini/green-pedestrian.png",
   "../imagini/red-pedestrian.png",
@@ -16,7 +15,6 @@ var phorizontal = [
   "../imagini/green-pedestrian.png",
 ];
 
-// declaram variabile care sa preia elementele din HTML si sa le putem transforma
 var pv_left = document.getElementById("plight-vertical-left");
 var pv_right = document.getElementById("plight-vertical-right");
 var ph_left = document.getElementById("plight-horizontal-left");
@@ -32,15 +30,19 @@ var horizontal = [
   "../imagini/yellow-trafic-car.png",
   "../imagini/green-traffic-car.png",
 ];
-// Cream variabile care sa preia elementele din html
+
 var v_left = document.getElementById("light-vertical-left");
 var v_right = document.getElementById("light-vertical-right");
 var h_left = document.getElementById("light-horizontal-left");
 var h_right = document.getElementById("light-horizontal-right");
+var v_left_2 = document.getElementById("2light-vertical-left");
+var v_right_2 = document.getElementById("2light-vertical-right");
+var h_left_2 = document.getElementById("2light-horizontal-left");
+var h_right_2 = document.getElementById("2light-horizontal-right");
 
 var intermitent_img = [
   "../imagini/intermitent-on.png",
-  "../imagini/intermitent-off.png",
+  "../imagini/intermitent.png",
 ];
 var vl_intermitent = document.getElementById("intermitent-vl");
 var vr_intermitent = document.getElementById("intermitent-vr");

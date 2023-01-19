@@ -7,6 +7,14 @@ html {
   overflow-y: none;
   font-family: "Comfortaa", cursive;
 }
+.top {
+  display: flex;
+  flex-direction: row;
+}
+.bottom {
+  display: flex;
+  flex-direction: row;
+}
 
 h1 {
   font-size: 2rem;

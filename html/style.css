@@ -1,19 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
-html {
+html,
+body {
   margin: 0;
   padding: 0;
   max-width: 100%;
-  overflow-x: none;
-  overflow-y: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
   font-family: "Comfortaa", cursive;
+}
+
+.flex {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15vh;
+}
+img {
+  margin: 2vh 2vw;
 }
 .top {
   display: flex;
   flex-direction: row;
+  width: 100%;
+
+  justify-content: space-between;
 }
 .bottom {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
 }
 
 h1 {
@@ -22,7 +40,7 @@ h1 {
   left: 1vw;
   top: 1vh;
   margin: 0;
-  color: #e3e3e3;
+  color: #252525;
 }
 
 h2 {
@@ -34,48 +52,60 @@ h2 {
   position: absolute;
   bottom: 3.3vh;
   left: 1vw;
-  color: #e3e3e3;
-  z-index: 1;
+  color: #252525;
+  z-index: 5;
 }
 
 .background {
   background: url("../imagini/background.jpeg") no-repeat center;
   background-size: 100%;
+  min-height: 50vh;
 }
 
 .light-pedestrian-intermitent img {
   width: 2vw;
   height: auto;
 }
-
+.light-pedestrian-intermitent {
+  flex-shrink: 0;
+}
 .light-cars img {
   width: 2vw;
   height: auto;
 }
-
+.left-vertical .light-cars img,
+.right-vertical .light-cars img {
+  transform: rotate(90deg);
+}
+.right-vertical .light-cars {
+}
+.left-vertical .light-cars {
+}
+.right-horizontal .light-pedestrian-intermitent img,
+.left-horizontal .light-pedestrian-intermitent img {
+  transform: rotate(90deg);
+  margin: 0vh 7vw 0vh;
+}
 .right-horizontal,
 .left-horizontal,
 .right-vertical,
 .left-vertical {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 40%;
 }
 
-.left-horizontal,
-.left-vertical {
+.left-horizontal {
   flex-direction: column;
 }
-.right-horizontal,
 .right-vertical {
+  flex-direction: row-reverse;
+}
+.right-horizontal {
   flex-direction: column-reverse;
 }
-
-.right-horizontal .light-pedestrian-intermitent img {
-  transform: rotate(90deg);
-  margin: 0 1.5vw;
+.left-vertical {
+  flex-direction: row;
 }
+
 .right-vertical .light-cars,
 .left-vertical .light-cars {
   display: flex;
@@ -84,36 +114,56 @@ h2 {
 .right-vertical .light-pedestrian-intermitent,
 .left-vertical .light-pedestrian-intermitent {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0vh 22vw 0vh;
 }
-
-.left-horizontal {
+.right-vertical .light-pedestrian-intermitent {
+  margin-top: -6vw;
+  margin-bottom: 13vw;
 }
-.left-horizontal .light-pedestrian-intermitent img {
-  transform: rotate(90deg);
-  margin: 0 1.5vw;
+.left-vertical .light-pedestrian-intermitent {
+  margin-top: 5vw;
+  margin-bottom: -7vw;
 }
-.left-vertical {
+.left-vertical .light-cars {
+  margin: -15vh -22vw 0;
 }
-.left-vertical .light-cars img {
-  transform: rotate(90deg);
-  margin: 0 1.5vw;
-}
-.right-vertical {
+.right-vertical .light-cars {
+  margin: 15vh -22vw 0;
 }
 .right-vertical .light-cars img {
-  transform: rotate(90deg);
-  margin: 0 1.5vw;
+  margin-top: -3vh;
 }
 
-button {
+.left-vertical .light-cars img {
+  margin-bottom: -3vh;
+}
+.right-horizontal .light-pedestrian-intermitent,
+.left-horizontal .light-pedestrian-intermitent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.right-horizontal .light-pedestrian-intermitent {
+  flex-direction: row-reverse;
+}
+.left-horizontal {
+}
+
+.right-vertical {
+}
+
+.light-pedestrian-intermitent {
+}
+
+.button {
   background: #1f1f1f70;
   border: none;
   width: 9.3vw;
   height: 2vw;
   font-size: 1rem;
   border-radius: 0.3vw;
-  margin: 0.5vw 0;
   color: #e3e3e3;
 }
 button:hover {

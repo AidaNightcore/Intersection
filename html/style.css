@@ -15,10 +15,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15vh;
+  gap: 4vw;
 }
 img {
-  margin: 2vh 2vw;
+  margin: 1vh 1vw;
 }
 .top {
   display: flex;
@@ -77,14 +77,33 @@ h2 {
 .right-vertical .light-cars img {
   transform: rotate(90deg);
 }
-.right-vertical .light-cars {
-}
+
 .left-vertical .light-cars {
 }
 .right-horizontal .light-pedestrian-intermitent img,
 .left-horizontal .light-pedestrian-intermitent img {
   transform: rotate(90deg);
-  margin: 0vh 7vw 0vh;
+  margin: 0vh 9vw 0vh;
+}
+
+.left-horizontal .light-pedestrian-intermitent {
+  margin-left: -7vw;
+  margin-top: 20vh;
+  margin-bottom: 4vh;
+}
+.left-horizontal .light-cars {
+  margin-left: 30vw;
+}
+.right-horizontal .light-pedestrian-intermitent {
+  margin-right: -7vw;
+  margin-bottom: 20vh;
+  margin-top: 2vh;
+}
+.right-horizontal .light-cars {
+  margin-right: 28vw;
+}
+.space {
+  width: 5vw;
 }
 .right-horizontal,
 .left-horizontal,
@@ -119,26 +138,26 @@ h2 {
   margin: 0vh 22vw 0vh;
 }
 .right-vertical .light-pedestrian-intermitent {
-  margin-top: -6vw;
-  margin-bottom: 13vw;
+  margin-top: 0vw;
+  margin-bottom: 14vw;
 }
 .left-vertical .light-pedestrian-intermitent {
-  margin-top: 5vw;
-  margin-bottom: -7vw;
+  margin-top: 12vh;
+  margin-bottom: 8vh;
 }
 .left-vertical .light-cars {
-  margin: -15vh -22vw 0;
+  margin: -14vh -18vw 0;
 }
 .right-vertical .light-cars {
-  margin: 15vh -22vw 0;
+  margin: 40vh -18vw 0;
 }
 .right-vertical .light-cars img {
   margin-top: -3vh;
 }
-
 .left-vertical .light-cars img {
   margin-bottom: -3vh;
 }
+
 .right-horizontal .light-pedestrian-intermitent,
 .left-horizontal .light-pedestrian-intermitent {
   display: flex;
@@ -147,14 +166,6 @@ h2 {
 }
 .right-horizontal .light-pedestrian-intermitent {
   flex-direction: row-reverse;
-}
-.left-horizontal {
-}
-
-.right-vertical {
-}
-
-.light-pedestrian-intermitent {
 }
 
 .button {
